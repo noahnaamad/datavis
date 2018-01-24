@@ -14,6 +14,9 @@ summary = data.describe()
 summary = summary.transpose()
 print(summary.head())
 
+seto = data[data['species'] == 'Iris-setosa']
+vers = data[data['species'] == 'Iris-versicolor']
+virg = data[data['species'] == 'Iris-virginica']
 
 ### Sepal length plot:
 ### sepal_length.png
@@ -25,20 +28,23 @@ print(summary.head())
 
 
 ### Sepal Length vs Width
-seto = data[data['species'] == 'Iris-setosa']
-vers = data[data['species'] == 'Iris-versicolor']
-virg = data[data['species'] == 'Iris-virginica']
 
-x_axis = data['sepal length (cm)']
-y_axis = data['sepal width (cm)']
-colors = {'Iris-setosa': 'blue', 'Iris-versicolor': 'red', 'Iris-virginica': 'green'}
-se = plt.scatter(seto['sepal length (cm)'], seto['sepal width (cm)'], color = 'b')
-ve = plt.scatter(vers['sepal length (cm)'], vers['sepal width (cm)'], color = 'g')
-vi = plt.scatter(virg['sepal length (cm)'], virg['sepal width (cm)'], color = 'r')
+#
+# x_axis = data['sepal length (cm)']
+# y_axis = data['sepal width (cm)']
+# colors = {'Iris-setosa': 'blue', 'Iris-versicolor': 'red', 'Iris-virginica': 'green'}
+# se = plt.scatter(seto['sepal length (cm)'], seto['sepal width (cm)'], color = 'b')
+# ve = plt.scatter(vers['sepal length (cm)'], vers['sepal width (cm)'], color = 'g')
+# vi = plt.scatter(virg['sepal length (cm)'], virg['sepal width (cm)'], color = 'r')
+#
+# plt.legend((se, ve, vi), ('Setosa', 'Versicolor', 'Virginica'), scatterpoints=1)
+#
+# plt.title('Sepal Length vs Width')
+# plt.xlabel('Sepal Length (cm)')
+# plt.ylabel('Sepal Width (cm)')
+# plt.show()
 
-plt.legend((se, ve, vi), ('Setosa', 'Versicolor', 'Virginica'), scatterpoints=1)
 
-plt.title('Sepal Length vs Width')
-plt.xlabel('Sepal Length (cm)')
-plt.ylabel('Sepal Width (cm)')
+###Box plot of Petal length
+data.boxplot(by='species')
 plt.show()
