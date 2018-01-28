@@ -2,6 +2,18 @@ import csv
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from pandas.tools.plotting import scatter_matrix
+import matplotlib.pyplot as plt
+from sklearn import model_selection
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+from sklearn.naive_bayes import GaussianNB
+from sklearn.svm import SVC
 
 data = pd.read_csv("flowers.csv", sep=",", header=None)
 data.columns =  ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)', 'species']
@@ -45,6 +57,9 @@ virg = data[data['species'] == 'Iris-virginica']
 # plt.show()
 
 
-###Box plot of Petal length
+###Box plot of Flower Attributes
 data.boxplot(by='species')
+plt.show()
+
+data.plot(kind="box", subplots=True, layout=(2,2), sharex=False, sharey=False, title="Length of each Attribute")
 plt.show()
