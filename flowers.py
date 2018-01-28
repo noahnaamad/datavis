@@ -57,9 +57,18 @@ virg = data[data['species'] == 'Iris-virginica']
 # plt.show()
 
 
-###Box plot of Flower Attributes
-data.boxplot(by='species')
-plt.show()
+###Box plot of Flower Attributes by species
+# data.boxplot(by='species')
+# plt.show()
+#
+# ##Box plot of flower attributes
+# data.plot(kind="box", subplots=True, layout=(2,2), sharex=False, sharey=False, title="Length of each Attribute")
+# plt.show()
+#
+# ##histogram of each attributes
+# data.hist()
+# plt.show()
 
-data.plot(kind="box", subplots=True, layout=(2,2), sharex=False, sharey=False, title="Length of each Attribute")
+##multivariate analysis
+scatter_matrix(data)
 plt.show()
