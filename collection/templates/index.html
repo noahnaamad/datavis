@@ -1,13 +1,20 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
 
+
 <! doctype html>
+
 <html>
 <head>
-  <title>My Tumblr App Project</title>
+{% block title %}
+  Homepage - {{ block.super }}
+{% endblock title %}
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body>
-  <h1>Hello Kind World!</h1>
-  <p>I'm still a basic website</p>
+  {% block content %}
+    <h1>Hello Kind World!</h1>
+    <p>I'm still a basic website</p>
+  {% endblock content %}
 </body>
 </html>
