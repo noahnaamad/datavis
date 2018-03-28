@@ -7,15 +7,14 @@
 <html>
 <head>
 {% block title %}
-  Homepage - {{ block.super }}
+  About - {{ block.super }}
 {% endblock title %}
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body>
   {% block content %}
-    <h1>Hello Kind World!</h1>
-    <p>{% if number %}Number exists!{% endif %}</p>
-    <p>I'm still a basic website</p>
+    <h1>About page</h1>
+    <p>About page content goes here</p>
   {% endblock content %}
 </body>
 </html>
